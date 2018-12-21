@@ -31,20 +31,15 @@ export default {
       unaryRequest.setMessage(this.name);
 
       var self = this;
-
-      var call = this.$echoService.echo(
+      // call拿到返回值可以通过callback或者监听data事件
+      this.$echoService.echo(
           unaryRequest, 
           {
             "custom-header-1": "value1"
-          },
-          function(err, response) {
-            if (err) {
-              console.log('Error code: '+err.code+' "'+ err.message+'"');
-            } else {
-              self.msg="Hello "+response.getMessage();
           }
-      });
-      
+      ).on('data',function(response){
+        self.msg="Hello "+response.getMessage();
+      })
     }
   }
 };

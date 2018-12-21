@@ -2,10 +2,13 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import grpcClient from './assets/grpc/client';
+import {EchoRequest, ServerStreamingEchoRequest, echoService} from './assets/grpc/client';
 
 Vue.config.productionTip = false;
-Vue.prototype.$grpcClient = grpcClient;
+Vue.prototype.$EchoRequest = EchoRequest;
+Vue.prototype.$ServerStreamingEchoRequest = ServerStreamingEchoRequest;
+Vue.prototype.$echoService = echoService;
+
 new Vue({
   router,
   store,

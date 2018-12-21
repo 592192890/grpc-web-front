@@ -10,7 +10,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue';
-
+import sayHelloService from '@/services/homeService.js';
 export default {
   name: 'home',
   components: {
@@ -29,16 +29,12 @@ export default {
     test(){
       var unaryRequest = new this.$EchoRequest();
       unaryRequest.setMessage(this.name);
-
-      var self = this;
-      // call拿到返回值可以通过callback或者监听data事件
-      this.$echoService.echo(
-          unaryRequest, 
-          {
-            "custom-header-1": "value1"
-          }
-      ).on('data',function(response){
-        self.msg="Hello "+response.getMessage();
+    
+      var header= {
+        "custom-header-1": "value1"
+      }
+      sayHelloService(unaryRequest,header).then(res=>{
+        this.msg="Hello "+res.getMessage();
       })
     }
   }

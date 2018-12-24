@@ -33,7 +33,7 @@ export default {
       var header= {
         "custom-header-1": "value1"
       }
-      sayHelloService(unaryRequest,header).then(res=>{
+      sayHelloService.echo(unaryRequest,header).then(res=>{
         this.msg="Hello "+res.getMessage();
       })
     },

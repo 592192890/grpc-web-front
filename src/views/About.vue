@@ -28,7 +28,7 @@ export default{
     var headers={
       "custom-header-1": "value1"
     }
-    aboutService(unaryRequest,headers).then(res=>{
+    aboutService.streamEcho(unaryRequest,headers).then(res=>{
       this.msg=res.result;
     }).catch(err=>{
       console.error(err)

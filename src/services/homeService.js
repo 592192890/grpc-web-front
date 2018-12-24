@@ -1,15 +1,14 @@
-import {echoService} from '@/assets/grpc/client';
+import {echoPromiseService} from '@/assets/grpc/client';
 
 var sayHelloService= {};
 sayHelloService.echo = function(requestParam,headers){
-    console.log(1111)
     return new Promise((resolve, reject)=>{
-        echoService.echo(requestParam, headers)
-            .on('data',function(response){
-                resolve(response)
+        echoPromiseService.echo(requestParam, headers)
+            .then(res=>{
+                resolve(res);
             })
-            .on('error',e=>{
-                reject(e)
+            .catch(err=>{
+                reject(err);
             })
     })
 }

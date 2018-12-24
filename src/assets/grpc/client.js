@@ -18,13 +18,17 @@
 
 const {EchoRequest,
   ServerStreamingEchoRequest} = require('../../../echo_pb.js');
-const {EchoServiceClient} = require('../../../echo_grpc_web_pb.js');
+const {EchoServiceClient,EchoServicePromiseClient} = require('../../../echo_grpc_web_pb.js');
 const grpc = {};
 grpc.web = require('grpc-web');
 
-var echoService = new EchoServiceClient('http://'+window.location.hostname+':8080', null, null);
+// 事件监听的Client
+// var echoService = new EchoServiceClient('http://'+window.location.hostname+':8080', null, null);
+// promise的Client, 但stream不支持then
+var echoPromiseService =new EchoServicePromiseClient('http://'+window.location.hostname+':8080', null, null);
 
+exports.echoPromiseService=echoPromiseService;
 exports.EchoRequest=EchoRequest;
 exports.ServerStreamingEchoRequest=ServerStreamingEchoRequest;
-exports.echoService=echoService;
+// exports.echoService=echoService;
 

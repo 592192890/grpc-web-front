@@ -1,9 +1,9 @@
-import {echoService} from '@/assets/grpc/client';
+import {echoPromiseService} from '@/assets/grpc/client';
 var aboutService={};
 aboutService.streamEcho = function(requestParam,headers){
     var result=[]
     return new Promise((resolve, reject)=>{
-        echoService.serverStreamingEcho(requestParam, headers)
+        echoPromiseService.serverStreamingEcho(requestParam, headers)
             .on('data',function(response){
                 result.push(response.getMessage());
             })

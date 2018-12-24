@@ -2,12 +2,12 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import {EchoRequest, ServerStreamingEchoRequest, echoService} from './assets/grpc/client';
+import {EchoRequest, ServerStreamingEchoRequest, EchoServicePromiseClient} from './assets/grpc/client';
 
 Vue.config.productionTip = false;
 Vue.prototype.$EchoRequest = EchoRequest;
 Vue.prototype.$ServerStreamingEchoRequest = ServerStreamingEchoRequest;
-Vue.prototype.$echoService = echoService;
+Vue.prototype.$EchoServicePromiseClient = EchoServicePromiseClient;
 
 import axios from 'axios';
 axios.defaults.headers.post['custom-header-1']="value1";

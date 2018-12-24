@@ -1,13 +1,17 @@
 import {echoService} from '@/assets/grpc/client';
 var aboutService=function(requestParam,headers){
-    console.log(1111)
+    var result=[]
     return new Promise((resolve, reject)=>{
-        echoService.echo(requestParam, headers)
+        echoService.serverStreamingEcho(requestParam, headers)
             .on('data',function(response){
-                resolve(response)
+                result.push(response.getMessage());
             })
             .on('error',e=>{
-                reject(e)
+                reject(e);
+            })
+            .on('end',function(){
+                console.log(result)
+                resolve({result:result});
             })
     })
 }

@@ -181,7 +181,12 @@ proto.grpc.gateway.testing.EchoRequest.prototype.toObject = function(opt_include
  */
 proto.grpc.gateway.testing.EchoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: jspb.Message.getFieldWithDefault(msg, 1, "")
+    message: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    str1: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    str2: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    str3: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    str4: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    str5: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -222,6 +227,26 @@ proto.grpc.gateway.testing.EchoRequest.deserializeBinaryFromReader = function(ms
       var value = /** @type {string} */ (reader.readString());
       msg.setMessage(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStr1(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStr2(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStr3(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStr4(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStr5(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -258,6 +283,41 @@ proto.grpc.gateway.testing.EchoRequest.serializeBinaryToWriter = function(messag
       f
     );
   }
+  f = message.getStr1();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getStr2();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getStr3();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getStr4();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getStr5();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
 };
 
 
@@ -273,6 +333,81 @@ proto.grpc.gateway.testing.EchoRequest.prototype.getMessage = function() {
 /** @param {string} value */
 proto.grpc.gateway.testing.EchoRequest.prototype.setMessage = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string str1 = 2;
+ * @return {string}
+ */
+proto.grpc.gateway.testing.EchoRequest.prototype.getStr1 = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.grpc.gateway.testing.EchoRequest.prototype.setStr1 = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string str2 = 3;
+ * @return {string}
+ */
+proto.grpc.gateway.testing.EchoRequest.prototype.getStr2 = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/** @param {string} value */
+proto.grpc.gateway.testing.EchoRequest.prototype.setStr2 = function(value) {
+  jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string str3 = 4;
+ * @return {string}
+ */
+proto.grpc.gateway.testing.EchoRequest.prototype.getStr3 = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.grpc.gateway.testing.EchoRequest.prototype.setStr3 = function(value) {
+  jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string str4 = 5;
+ * @return {string}
+ */
+proto.grpc.gateway.testing.EchoRequest.prototype.getStr4 = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/** @param {string} value */
+proto.grpc.gateway.testing.EchoRequest.prototype.setStr4 = function(value) {
+  jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string str5 = 6;
+ * @return {string}
+ */
+proto.grpc.gateway.testing.EchoRequest.prototype.getStr5 = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.grpc.gateway.testing.EchoRequest.prototype.setStr5 = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

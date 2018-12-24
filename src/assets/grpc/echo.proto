@@ -21,6 +21,11 @@ message Empty {
 
 message EchoRequest {
   string message = 1;
+  string str1 =2;
+  string str2=3;
+  string str3=4;
+  string str4=5;
+  string str5=6;
 }
 
 message EchoResponse {

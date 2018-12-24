@@ -9,6 +9,10 @@ Vue.prototype.$EchoRequest = EchoRequest;
 Vue.prototype.$ServerStreamingEchoRequest = ServerStreamingEchoRequest;
 Vue.prototype.$echoService = echoService;
 
+import axios from 'axios';
+axios.defaults.headers.post['custom-header-1']="value1";
+// axios.defaults.headers.post['content-type']="application/grpc-web-text+proto";
+Vue.prototype.$ajax= axios;
 new Vue({
   router,
   store,

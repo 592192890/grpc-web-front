@@ -10,6 +10,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "google-protobuf": "^3.6.1",
     "grpc": "^1.15.0",
     "grpc-web": "^1.0.0",
